@@ -1,0 +1,273 @@
+
+$color_white:white;
+$color_green:#79a342;
+@mixin display {
+  display: flex;
+}
+@mixin position{
+z-index: 1;
+position: relative;
+}
+@mixin algin{
+text-align: center;
+}
+
+
+::selection {
+  color:$color_white;
+  background:$color_green;
+}
+
+
+.header{
+ @include display;
+  justify-content: space-between;
+}
+a{text-decoration: none;}
+.top-right-logo{
+  width:auto;
+    background-image:none!important;
+    width:200px;
+     height:53px;
+   
+      display: inline-block;
+    }
+    .top-right-logo {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        padding-left: 40px;
+
+      }
+.mail{
+  margin-top: 12px;
+  width: 500px;
+  background-color: $color_white;
+  margin-left: -150px;
+  margin-bottom: -10px;
+}
+      .triangle-up {
+        margin: -99px;
+        width: 0;
+        height: 0;
+        border-left: 0px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom:80px solid  $color_green;
+        @include position;
+      }
+      .top-menu{
+        
+        background-color: $color_green;
+        @include position;
+        width: 650px;
+        height: 79px;
+        @include algin;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+       
+      }
+      .top-menu a{
+        
+        color: $color_white;
+
+      
+      
+      }
+      .green-menu {
+        display: inline-block;
+        margin-left: 30px;
+        margin-top:25px;
+        @include algin;
+        
+      }
+      .header-info{
+        @include display;
+        @include algin;
+        justify-content:space-around;
+      }
+
+      /*clip*/
+
+
+.clip{
+  position: relative;
+  z-index: 0;
+  width: 98%;
+  height: 550px;
+  @include algin;
+  color: $color_white;
+  margin-top: -45px;
+  
+}
+.video{
+  width: 100%;
+  margin-left: -50px;
+}
+.clip>h1{
+ 
+  font-size: 55px;
+}
+.clip-h1{
+  @include position;
+ margin-top: -500px;
+}
+
+/*services style*/
+.services{
+
+  @include position;
+  background-color:$color_white;
+  width: 93%;
+  height: 230px;
+  @include algin;
+
+  margin-top: 10px;
+  border-radius:30px 30px 1px 1px;
+  margin-right: 4%;
+ 
+}
+.services>img{
+  padding-top: 30px;
+  padding-right: 30px;
+}
+.green-story{
+  @include position;
+  background-color:$color_white;
+  @include algin;
+  color: rgb(187, 186, 186);
+  margin-top: -75px;
+
+}
+.green-story>input{
+  background-color:$color_green;
+  @include algin;
+  border-radius:15px;
+  width: 137px;
+  height: 41px;
+  border: 0;
+  color:$color_white;
+  margin-top: 35px;
+}
+
+/*goals element*/
+.goals-top{
+  
+  margin-top: 90px;
+  @include display;
+  @include algin;
+}
+.goals-top>div{
+  padding-left: 40px;
+  color:rgb(187, 186, 186);
+}
+.goals-top>div>h2{
+  
+  color:$color_green;
+}
+.goals-bottom{
+  
+  margin-top: 90px;
+ @include display;
+ @include algin;
+}
+.goals-bottom>div{
+  padding-left: 40px;
+  color:rgb(187, 186, 186);
+}
+.goals-bottom>div>h2{
+  
+  color:$color_green;
+}
+
+/*big picture element*/
+.big-pic{
+  
+  background-image:url("../images/realpic.jpeg") ;
+  width: 100%;
+  height: 650px;
+  @include algin;
+
+  color: $color_white;
+  margin-top: 50px;
+  
+}
+.big-pic>div{
+  padding-top: 10%;
+}
+
+.big-pic>div>input{
+  margin-top: 50px;
+  background-color:$color_green;
+  @include algin;
+  border-radius:19px;
+  width: 170px;
+  height: 41px;
+  border: 0;
+  color: $color_white;
+}
+/*customer box style*/
+.customer-box{
+  @include display;
+justify-content:space-between;
+
+  background-color:rgb(4, 83, 40);
+  width: 93%;
+  height: 290px;
+  @include algin;
+
+  margin-top: -110px;
+  margin-right: 4%;
+}
+
+
+.right-box{
+  background-color:$color_white;
+  
+  width: 74%;
+}
+.right-box>img{
+  padding-top: 80px;
+  width: 185px;
+}
+.right-box>img:hover{
+  padding-top: 85px;
+  width: 200px;
+ }
+.left-box{
+  width: 26%;
+  color:white;
+  background-color:$color_green;
+  @include algin;
+  justify-content:space-around;
+  padding-top: 20px;
+}
+.left-box>h1{
+  font-family:Tahoma,Arial,Helvetica;
+  font-size: 35px;
+}
+.ceo-word{
+ @include display;
+  justify-content:space-between;
+  
+    background-color:black;
+    width: 93%;
+    height: 190px;
+    @include algin;
+  
+    margin-top: 110px;
+    margin-bottom: 110px;
+    margin-right: 4%;
+  }
+  .right{
+    width: 24%;
+    background-color:$color_green;
+    color:black;
+    
+  }
+  .left{
+    color:$color_white;
+    font-size: 45px;
+    padding-right: 40px;
+    padding-top: 60px;
+    @include algin;;
+  }
