@@ -1,0 +1,263 @@
+::selection {
+  color:white;
+  background:#79a342
+}
+
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+a{text-decoration: none;}
+.top-right-logo{
+  width:auto;
+    background-image:none!important;
+    width:200px;
+     height:53px;
+   
+      display: inline-block;
+    }
+    .top-right-logo {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        padding-left: 40px;
+
+      }
+.mail{
+  margin-top: 12px;
+  width: 500px;
+  background-color: white;
+  margin-left: -150px;
+  margin-bottom: -10px;
+}
+      .triangle-up {
+        margin: -99px;
+        width: 0;
+        height: 0;
+        border-left: 0px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom:80px solid  #79a342;
+        z-index: 1;
+        position: relative;
+      }
+      .top-menu{
+        
+        background-color: #79a342;
+        z-index: 1;
+        position: relative;
+        width: 650px;
+        height: 79px;
+        text-align:center;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+       
+      }
+      .top-menu a{
+        
+        color: white;
+
+      
+      
+      }
+      .green-menu {
+        display: inline-block;
+        margin-left: 30px;
+        margin-top:25px;
+        text-align:center;
+        
+      }
+      .header-info{
+        display:flex;
+        text-align:center;
+        justify-content:space-around;
+      }
+
+      /*clip*/
+
+
+.clip{
+  position: relative;
+  z-index: 0;
+  width: 98%;
+  height: 550px;
+  text-align: center;
+  color: white;
+  margin-top: -45px;
+  
+}
+.video{
+  width: 100%;
+  margin-left: -50px;
+}
+.clip>h1{
+ 
+  font-size: 55px;
+}
+.clip-h1{
+  z-index: 1;
+  position: relative;
+ margin-top: -500px;
+}
+
+/*services style*/
+.services{
+
+  z-index: 1;
+  position: relative;
+  background-color:white;
+  width: 93%;
+  height: 230px;
+  text-align: center;
+
+  margin-top: 10px;
+  border-radius:30px 30px 1px 1px;
+  margin-right: 4%;
+ 
+}
+.services>img{
+  padding-top: 30px;
+  padding-right: 30px;
+}
+.green-story{
+  z-index: 1;
+  position: relative;
+  background-color:white;
+  text-align: center;
+  color: rgb(187, 186, 186);
+  margin-top: -75px;
+
+}
+.green-story>input{
+  background-color:#79a342;
+  text-align: center;
+  border-radius:15px;
+  width: 137px;
+  height: 41px;
+  border: 0;
+  color:white;
+  margin-top: 35px;
+}
+
+/*goals element*/
+.goals-top{
+  
+  margin-top: 90px;
+  display:flex;
+  text-align: center;
+}
+.goals-top>div{
+  padding-left: 40px;
+  color:rgb(187, 186, 186);
+}
+.goals-top>div>h2{
+  
+  color:#79a342;
+}
+.goals-bottom{
+  
+  margin-top: 90px;
+  display:flex;
+  text-align: center;
+}
+.goals-bottom>div{
+  padding-left: 40px;
+  color:rgb(187, 186, 186);
+}
+.goals-bottom>div>h2{
+  
+  color:#79a342;
+}
+
+/*big picture element*/
+.big-pic{
+  
+  background-image:url("../images/realpic.jpeg") ;
+  width: 100%;
+  height: 650px;
+  text-align: center;
+
+  color: white;
+  margin-top: 50px;
+  
+}
+.big-pic>div{
+  padding-top: 10%;
+}
+
+.big-pic>div>input{
+  margin-top: 50px;
+  background-color:#79a342;
+  text-align: center;
+  border-radius:19px;
+  width: 170px;
+  height: 41px;
+  border: 0;
+  color: white;
+}
+/*customer box style*/
+.customer-box{
+display: flex;
+justify-content:space-between;
+
+  background-color:rgb(4, 83, 40);
+  width: 93%;
+  height: 290px;
+  text-align: center;
+
+  margin-top: -110px;
+  margin-right: 4%;
+}
+
+
+.right-box{
+  background-color:white;
+  
+  width: 74%;
+}
+.right-box>img{
+  padding-top: 80px;
+  width: 185px;
+}
+.right-box>img:hover{
+  padding-top: 85px;
+  width: 200px;
+ }
+.left-box{
+  width: 26%;
+  color:white;
+  background-color:#79a342;
+  text-align: center;
+  justify-content:space-around;
+  padding-top: 20px;
+}
+.left-box>h1{
+  font-family:Tahoma,Arial,Helvetica;
+  font-size: 35px;
+}
+.ceo-word{
+  display: flex;
+  justify-content:space-between;
+  
+    background-color:black;
+    width: 93%;
+    height: 190px;
+    text-align: center;
+  
+    margin-top: 110px;
+    margin-bottom: 110px;
+    margin-right: 4%;
+  }
+  .right{
+    width: 24%;
+    background-color:#79a342;
+    color:black;
+    
+  }
+  .left{
+    color:white;
+    font-size: 45px;
+    padding-right: 40px;
+    padding-top: 60px;
+    text-align: center;
+  }
