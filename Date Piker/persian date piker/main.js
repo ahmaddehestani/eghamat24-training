@@ -17,11 +17,11 @@ var starter_next_month_day=0;
 
 const now = new Date();
 
-const firstDay = new Date(now.getFullYear(), now.getMonth(), 1);
-console.log(firstDay); 
-const test=firstDay+"";
-const myArray = test.split(" ");
-const day_name=myArray[0];
+const first_Day = new Date(now.getFullYear(), now.getMonth(), 1);
+console.log(first_Day); 
+const test=first_Day+"";
+const my_Array = test.split(" ");
+const day_name=my_Array[0];
 console.log(day_name);
 
 const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0);

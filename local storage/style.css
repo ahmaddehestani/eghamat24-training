@@ -1,0 +1,41 @@
+form{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+  
+    background-color: rgb(230, 189, 224);
+    margin-left: 30%;
+    
+}
+b{
+    color:black;
+    background-color: rgb(197, 176, 209);
+    width: 20%;
+    height: 100%;
+}
+span{
+    background-color: rgb(231, 167, 212);
+    width: 20%;
+    height: 100%;
+}
+div>div{
+    
+    border: 1px solid black;
+    height: 25px;
+    display: flex;
+ 
+}
+ .pageination{
+    width: 30%px;
+    margin-left: ;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+ }
+ .data>div{
+    
+    border: 1px solid black;
+    height: 25px;
+    display: flex;
+ }

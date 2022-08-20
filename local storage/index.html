@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+<form >
+  <label for="first_name">First name:</label>
+  <input type="text" id="first_name" name="first_name"><br><br>
+  <label for="last_name">Last name:</label>
+  <input type="text" id="last_name" name="last_name"><br><br>
+   <label for="entry_time">entry time:</label>
+    <input type="text" id="entry_time" name="entry_time"><br><br>
+   <label for="exit_time">exit time:</label>
+    <input type="text" id="exit_time" name="exit_time"><br><br>
+  <input type="submit" value="Save in localStore" class="submit">
+</form>
+<h1>your count record until now:</h1> 
+<h2 class="count_record"></h2>
+<div class="pageination">
+<a href="javascript:prev_page()" id="btn_prev">Prev</a>
+<a href="javascript:next_page()" id="btn_next">Next</a>
+page: <i id="page"></i>
+</div>
+<div id="listingTable" class="data"></div>
+
+<div id="old_record" class="old_data"></div>
+
+<script src="./main.js" >
+
+</script>
+
+</body>
+</html>
+
