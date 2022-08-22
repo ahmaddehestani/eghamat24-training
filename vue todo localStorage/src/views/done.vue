@@ -9,9 +9,6 @@ const todos_asc = computed(() => todos.value.sort((a,b) =>{
 	return a.createdAt - b.createdAt
 }))
 
-//const todos_done = computed(() => todos.value.sort((a,b) =>{
-//return a.createdAt - b.createdAt
-//}))
 
 
 watch(name, (new_task) => {
@@ -65,13 +62,16 @@ const day1 = date1.getDate();
  return [year1, month1, day1].join('/')
 }
 
-const todo_date= make_date(date1)
+let todo_date= make_date(date1)
+let show=1;
+function get_next_Day() {
+	console.log(show);
+show++
+console.log("next day run");
+console.log(show);
+ 
+}
 
- let set_tomorrow=1
- function set_tomorrow1(){
-	
-	console.log("i work");
-	}
 
 function change_category(todo){
 	todo.display_falg=!todo.display_falg
@@ -87,11 +87,11 @@ function change_category(todo){
 		
 
 		<section class="todo-list">
-			<h3>TODO LIST</h3>
+			
 					<div class="date_piker">
-			<button @click="set_tomorrow1"> ?  {{set_tomorrow}} </button>
-			<h6>  {{todo_date}}</h6>
-		<button @click="set_tomorrow1"> ?  {{set_tomorrow}} </button>
+			<input type="button" value="<" @click="get_next_Day">
+			<h6>  {{show}}</h6>
+		<input type="button" value=">" @click="get_next_Day">
 		
 </div>
 			<div class="list" id="todo-list">

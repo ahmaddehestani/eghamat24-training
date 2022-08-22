@@ -9,9 +9,6 @@ const todos_asc = computed(() => todos.value.sort((a,b) =>{
 	return a.createdAt - b.createdAt
 }))
 
-//const todos_done = computed(() => todos.value.sort((a,b) =>{
-//return a.createdAt - b.createdAt
-//}))
 
 
 watch(name, (new_task) => {
@@ -78,6 +75,12 @@ function change_category(todo){
 	todo.category="personal"
 
 }
+let hide_task=true
+function hide(){
+	hide_task=!hide_task
+	console.log("you call me");
+	console.log(hide_task);
+}
 
 </script>
 
@@ -89,12 +92,16 @@ function change_category(todo){
 		<section class="todo-list">
 			<h3>TODO LIST</h3>
 					<div class="date_piker">
-			<button @click="set_tomorrow1"> prev {{set_tomorrow}} </button>
+			<!-- <button @click="set_tomorrow1"> prev {{set_tomorrow}} </button> -->
+			<input type="button" value="<" >
 			<h6>  {{todo_date}}</h6>
 		<button @click="set_tomorrow1">next{{set_tomorrow}} </button>
 		
 </div>
-			<div class="list" id="todo-list">
+	
+		<input type="submit"  
+							value="Hide" @click="hide"/>
+			<div class="list" id="todo-list" v-if= hide_task>
 
 				<div v-for="todo in todos_asc" >
 					<div v-if= !todo.display_falg :class="`todo-item ${todo.done && 'done'}`">

@@ -1,14 +1,17 @@
-
 <script setup>
+
 import { ref, onMounted, computed, watch } from 'vue'
 const todos = ref([])
 const name = ref('')
 const input_content = ref('')
-const date=ref('')
-const input_category = ref(null)
+let search_flag=false
+let filtered=[]
+
 const todos_asc = computed(() => todos.value.sort((a,b) =>{
 	return a.createdAt - b.createdAt
 }))
+
+
 
 
 watch(name, (new_task) => {
@@ -19,83 +22,63 @@ watch(todos, (new_task) => {
 }, {
 	deep: true
 })
-const addTodo = () => {
-	if (input_content.value.trim() === '' || input_category.value === null) {
-		return
-	}
-	todos.value.push({
-		content: input_content.value,
-		category: input_category.value,
-		done: false,
-		editable: false,
-		date:date.value,
-		createdAt: new Date().getTime()
-	})
 
-
-let get_date= new Date()
-let day=get_date.getDate();
-let t=date._value.split('-')
-let r=t[2].toString()
-let d=day.toString()
-
-if(d==r){
-console.log("today");
-}
-console.log(get_date);
-input_content.value=''
-input_category.value=null
-date._value=null
-
-}
-const removeTodo = (todo) => {
-	todos.value = todos.value.filter((t) => t !== todo)
-}
 onMounted(() => {
 	name.value = localStorage.getItem('name') || ''
 	todos.value = JSON.parse(localStorage.getItem('todos')) || []
 })
 
-const date1 = new Date();
+function search_task(){
+    filtered.length=0
 
-function make_date(date1){
-const year1 = date1.getFullYear();
-const month1 = date1.getMonth() + 1;
-const day1 = date1.getDate();
- return [year1, month1, day1].join('/')
+for (let index = 0; index < todos._rawValue.length; index++) {
+    const element = todos._rawValue[index];
+    if(element.content==input_content.value){
+        console.log(`task find and ${element.content} Push to array`);
+        search_flag=true
+    
+        filtered.push(element)
+    }else{
+        console.log("else work");
+     
+    }
+}
+console.log(filtered);
+
+    input_content.value = null
+   
 }
 
-const todo_date= make_date(date1)
 
-
-
-
-
-
-
-
-
-
-
-
-	let my_flag= set_flag()
-function set_flag(todo){
-return true
-}
 
 </script>
+
 <template>
 	<main class="app">
+			
+		
 
 		<section class="todo-list">
-			<h3>TODO LIST</h3>
-			
-			<h6>  {{todo_date}}</h6>
+
+            <form id="new-todo-form" @submit.prevent="addTodo">
+				<h4>SEARCH YOUR TASK</h4>
+				<input 
+					type="text" 
+					name="content" 
+					id="content" 
+					placeholder="serach your task"
+					v-model="input_content" 
+                    @keyup.enter="search_task"
+                    />
+                    
+                    </form>
 		
+			
+
 
 			<div class="list" id="todo-list">
 
-				<div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
+				<div v-for="todo in filtered" :class="`todo-item ${todo.done && 'done'}`">
 		
 					<label>
 						<input type="checkbox" v-model="todo.done" />
@@ -119,8 +102,8 @@ return true
 					</div>
 					</div>
 				</div>
-			
-		
+
+			 
 		</section>
 
 

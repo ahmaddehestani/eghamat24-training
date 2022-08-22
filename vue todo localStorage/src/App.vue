@@ -11,6 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <RouterLink to="/list">list</RouterLink>
         <RouterLink to="/pending">pending</RouterLink>
         <RouterLink to="/done">done</RouterLink>
+        <RouterLink to="/search">search</RouterLink>
    
     
 
