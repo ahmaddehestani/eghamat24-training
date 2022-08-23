@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
-import { useForm, useWatch } from "react-hook-form";
+import React, { useState, useEffect } from "react";
+
 const get_todos=()=>{
 	const data=localStorage.getItem('todos')
 	if(data){
@@ -30,11 +30,10 @@ const handle_submit=(event)=>{
 
 	set_todos([...todos,todo_object])
 	set_todo_value('');
-
 }
 
 useEffect(()=>{
-	localStorage.setItem('toods',JSON.stringify(todos));
+	localStorage.setItem('todos', JSON.stringify(todos));
 
 },[todos])
 
@@ -56,11 +55,12 @@ onChange={(event)=>set_todo_value(event.target.value)} value={todo_value}
 {todos.length>0 && (<>
 {todos.map((task,index)=>(
 
-<div key={index}>
+<div key={task.id}>
 <input type="checkbox"/>
 <span> {task.todo_value}</span>
-<button onClick={()=>handle_delete(task.id)}>delete</button>
-
+<span onClick={()=>handle_delete(task.id)}>
+<button > delete</button>
+</span>
 
 </div>
 
