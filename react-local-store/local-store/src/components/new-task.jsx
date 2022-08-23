@@ -34,11 +34,18 @@ const handle_submit=(event)=>{
 }
 
 useEffect(()=>{
-	localStorage.setItem('toods',JSON.stringify(todos))
+	localStorage.setItem('toods',JSON.stringify(todos));
 
 },[todos])
 
-return(<>
+const handle_delete=(id)=>{
+	const filtered=todos.filter((todo)=>{
+		return todo.id !== id;
+	})
+	set_todos(filtered)
+}
+return(
+<>
 <form autoComplete="off" onSubmit={handle_submit}>
 <input type="text" placeholder="write Task" required
 onChange={(event)=>set_todo_value(event.target.value)} value={todo_value}
@@ -52,7 +59,7 @@ onChange={(event)=>set_todo_value(event.target.value)} value={todo_value}
 <div key={index}>
 <input type="checkbox"/>
 <span> {task.todo_value}</span>
-<button>delete</button>
+<button onClick={()=>handle_delete(task.id)}>delete</button>
 
 
 </div>

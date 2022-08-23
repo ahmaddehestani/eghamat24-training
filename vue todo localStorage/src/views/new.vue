@@ -71,9 +71,10 @@ onMounted(() => {
 			<h2 class="title">
 				TODO LIST 
 			</h2>
-		</section>
+		
 
-		<section class="create-todo">
+
+		
 			<h3>CREATE A TASK</h3>
 
 			<form id="new-todo-form" @submit.prevent="addTodo">
