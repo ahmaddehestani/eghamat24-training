@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useNavigate ,Redirect} from "react";
+import {  Link } from 'react-router-dom';
 
 const get_todos=()=>{
 	const data=localStorage.getItem('todos')
@@ -11,6 +12,7 @@ const get_todos=()=>{
 }
 
 export const Adds=()=>{
+	// const navigate = useNavigate();
 
 const [todo_value , set_todo_value]=useState('')
 const [todos, set_todos]=useState(get_todos());
@@ -37,6 +39,8 @@ const handle_submit=(event)=>{
 	set_todos([...todos,todo_object])
 	set_todo_value('');
 	set_date_value('');
+	// navigate('/list');
+	// return <Redirect  to="/list" />
 }
 
 useEffect(()=>{
@@ -85,6 +89,10 @@ const handle_date_piker=(date)=>{
 
 return(
 <>
+<nav>
+<Link to="/list">task list</Link>
+</nav>
+
 <form autoComplete="off" onSubmit={handle_submit}>
 <input type="text" placeholder="write Task" required
 onChange={(event)=>set_todo_value(event.target.value)} value={todo_value}
@@ -92,7 +100,7 @@ onChange={(event)=>set_todo_value(event.target.value)} value={todo_value}
 <input type="date"  onChange={(event)=>set_date_value(event.target.value)} value={date_value} required/>
 <button> ADD</button>
 </form>
-
+{/* 
 <label>SHOW LIST</label>
 <input type="checkbox"  onChange={(event)=>{set_hide(!hide)}} check={hide}/>
 {!hide && (<>
@@ -115,8 +123,8 @@ onChange={(event)=>set_todo_value(event.target.value)} value={todo_value}
 )}
 
 </>)}
-
-
+ */}
+{/* 
 <input type="date"   onChange={(event)=>handle_date_piker(event.target.value) } value={date_piker}  />
 
 {todos_with_date.length>0 && (<>
@@ -135,7 +143,7 @@ onChange={(event)=>set_todo_value(event.target.value)} value={todo_value}
 
 ))}
 </>
-)}
+)} */}
 
 </>
 )
