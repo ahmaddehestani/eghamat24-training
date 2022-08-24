@@ -93,7 +93,7 @@ return(
 <Link to="/list">task list</Link>
 </nav>
 
-<form autoComplete="off" onSubmit={handle_submit}>
+<form autoComplete="off" onSubmit={handle_submit} class="create-todo">
 <input type="text" placeholder="write Task" required
 onChange={(event)=>set_todo_value(event.target.value)} value={todo_value}
 />

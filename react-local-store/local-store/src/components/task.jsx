@@ -97,20 +97,21 @@ function List() {
 <Link to="/newTask">new task</Link>
 </nav>
 
-
-<label>SHOW LIST</label>
+<div class="show" >
+<label >SHOW DONE LIST</label>
 <input type="checkbox"  onChange={(event)=>{set_hide(!hide)}} check={hide}/>
+</div>
 {!hide && (<>
 {todos.length>0 && (<>
 {todos.map((task,index)=>(
 
-<div key={task.id}>
+<div key={task.id} class="item">
 	
 <input type="checkbox"   onChange={()=>{handle_checkbox(task.id)}} checked={task.category}/>
 <span> {task.title}</span>
 <span> {task.date}</span>
 <span onClick={()=>handle_delete(task.id)}>
-<button > delete</button>
+<button class="btn-delete"> delete</button>
 </span>
 
 </div>
@@ -122,12 +123,12 @@ function List() {
 </>)}
  
 
-<input type="date"   onChange={(event)=>handle_date_piker(event.target.value) } value={date_piker}  />
+<input type="date"  class="date-piker" onChange={(event)=>handle_date_piker(event.target.value) } value={date_piker}  />
 
 {todos_with_date.length>0 && (<>
 {todos_with_date .map((task,index)=>(
 
-<div key={task.id}>
+<div key={task.id} class="item">
 	
 <input type="checkbox"   onChange={()=>{handle_checkbox(task.id)}} checked={task.category}/>
 <span> {task.title}</span>
