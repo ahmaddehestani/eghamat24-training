@@ -35,12 +35,13 @@ const handle_submit=(event)=>{
 		date:date_value
 
 	}
-
+	
 	set_todos([...todos,todo_object])
 	set_todo_value('');
 	set_date_value('');
 	// navigate('/list');
-	// return <Redirect  to="/list" />
+	// return <Redirect  to ="/list" />
+	
 }
 
 useEffect(()=>{
@@ -48,44 +49,9 @@ useEffect(()=>{
 
 },[todos])
 
-const handle_delete=(id)=>{
-	const filtered=todos.filter((todo)=>{
-		return todo.id !== id;
-	})
-	set_todos(filtered)
-}
 
-const handle_checkbox=(id)=>{
-let todo_array=[]
-todos.forEach((task)=>{
-	if(task.id===id){
-		if(task.category===false){
-			task.category=true
-		}
-		else if(task.category===true){
-			task.category=false
 
-		}
-	}
-	todo_array.push(task);
-	set_todos(todo_array)
-})
 
-}
-
-const handle_date_piker=(date)=>{
-	set_date_piker_value(date)
-	let todo_array=[]
-	todos.forEach((task)=>{
-		if(task.date===date){
-			
-			todo_array.push(task);
-		
-			}
-			
-			set_todos_with_date(todo_array)
-	})
-}
 
 return(
 <>

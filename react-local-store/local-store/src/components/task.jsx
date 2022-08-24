@@ -27,23 +27,6 @@ function List() {
     
     
     
-    const handle_submit=(event)=>{
-        event.preventDefault();
-        const date= new Date();
-        const time= date.getTime();
-    
-        let todo_object={
-            id:time,
-            title:todo_value,
-            category:false,
-            date:date_value
-    
-        }
-    
-        set_todos([...todos,todo_object])
-        set_todo_value('');
-        set_date_value('');
-    }
     
     useEffect(()=>{
         localStorage.setItem('todos', JSON.stringify(todos));

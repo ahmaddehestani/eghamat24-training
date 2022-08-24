@@ -9,8 +9,8 @@ const App = ()=> {
   return (<>
    
     <Routes>
-    <Route path="/newTask" element={<Adds />} />
-    <Route path="/list" element={<List />} />
+    <Route path="newTask" element={<Adds />} />
+    <Route path="list" element={<List />} />
   </Routes>
 
  {/* <div>
