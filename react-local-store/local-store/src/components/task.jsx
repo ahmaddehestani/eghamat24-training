@@ -14,19 +14,22 @@ const get_todos=()=>{
 }
 
 
+
+
 function List() {
 
 
 
-    const [todo_value , set_todo_value]=useState('')
+   
     const [todos, set_todos]=useState(get_todos());
     const [date_value, set_date_value]=useState('')
     const [hide, set_hide]=useState(true)
     const [date_piker, set_date_piker_value]=useState('')
     const [todos_with_date ,set_todos_with_date]=useState('')
+   
     
-    
-    
+ 
+
     
     useEffect(()=>{
         localStorage.setItem('todos', JSON.stringify(todos));
@@ -39,6 +42,7 @@ function List() {
         })
         set_todos(filtered)
     }
+
     
     const handle_checkbox=(id)=>{
     let todo_array=[]

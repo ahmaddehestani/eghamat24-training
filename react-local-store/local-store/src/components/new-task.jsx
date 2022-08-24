@@ -1,4 +1,4 @@
-import React, { useState, useEffect ,useNavigate ,Redirect} from "react";
+import React, { useState, useEffect ,useNavigate ,Redirect, Navigate} from "react";
 import {  Link } from 'react-router-dom';
 
 const get_todos=()=>{
@@ -14,12 +14,10 @@ const get_todos=()=>{
 export const Adds=()=>{
 	// const navigate = useNavigate();
 
+	// const [redirec,setR]=useState(null)
 const [todo_value , set_todo_value]=useState('')
 const [todos, set_todos]=useState(get_todos());
 const [date_value, set_date_value]=useState('')
-const [hide, set_hide]=useState(true)
-const [date_piker, set_date_piker_value]=useState('')
-const [todos_with_date ,set_todos_with_date]=useState('')
 
 
 
@@ -40,7 +38,10 @@ const handle_submit=(event)=>{
 	set_todo_value('');
 	set_date_value('');
 	// navigate('/list');
-	// return <Redirect  to ="/list" />
+	// setR(<Redirect  to ="list" />)
+	//  return <Redirect  to ='/list' />
+	// return <Navigate to="/list" />
+	window.location.replace("/list");
 	
 }
 
@@ -58,7 +59,7 @@ return(
 <nav>
 <Link to="/list">task list</Link>
 </nav>
-
+{/* {redirec} */}
 <form autoComplete="off" onSubmit={handle_submit} class="create-todo">
 <input type="text" placeholder="write Task" required
 onChange={(event)=>set_todo_value(event.target.value)} value={todo_value}
