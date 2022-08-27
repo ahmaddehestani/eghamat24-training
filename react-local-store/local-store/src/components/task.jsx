@@ -110,7 +110,7 @@ function List() {
 </>)}
  
 
-<input type="date"  class="date-piker" onChange={(event)=>handle_date_piker(event.target.value) } value={date_piker}  />
+<input type="text"  class="date-piker" onChange={(event)=>handle_date_piker(event.target.value) } value={date_piker}  />
 
 {todos_with_date.length>0 && (<>
 {todos_with_date .map((task,index)=>(
