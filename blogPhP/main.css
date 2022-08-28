@@ -39,12 +39,12 @@ form{
     justify-items:normal;
 }
 form>input{
-    margin-top: 10px;
+    margin-bottom: 10px;
     height: 25px;
 
 }
 textarea{
-    margin-top: 10px;
+    margin-bottom: 10px;
 
 }
 

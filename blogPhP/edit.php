@@ -7,9 +7,11 @@ if(!auth()){
 //     redirect('panel.php');
 // }
 $id=$_GET['id'];
-// $title="999";
-// $content="888";
-// $author="666";
+$old_title=$_GET['title'];
+$old_content=$_GET['content'];
+$old_author=$_GET['author'];
+
+
 if(isset($_POST['btnSave'])&& $_POST['btnSave']=="save")
 {
  $title=$_POST['title'];
@@ -17,10 +19,7 @@ $new_id=$_POST['id'];
  $author=$_POST['author'];
  $content=$_POST['content'];
 }
-echo $id;
-echo $title;
-echo  $author;
-echo  $content;
+
 
 
 class MyDB extends SQLite3 {
@@ -47,11 +46,7 @@ EOF;
  $db->close();
 
 
- echo "idi is:  ".$id." \n ";
- echo "  new id  is:  ".$new_id."  \n";
-// echo $title;
-// echo  $author;
-// echo  $content;
+
 
 ?>
 <!DOCTYPE html>
@@ -71,11 +66,14 @@ EOF;
     </nav>
    
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
+    <label>id</label>
     <input type="text" value="<?= $id?>"  name="id">
-    <input type="text" placeholder="title"  name="title">
-    <textarea  name="content" rows="4" cols="50" placeholder="content" ></textarea>
-  
-    <input type="text" placeholder="author"  name="author">
+    <label>title</label>
+    <input type="text" value="<?= $old_title?>"  name="title">
+    <label>content</label>
+    <textarea  name="content" rows="4" cols="50"  ><?= $old_content?></textarea>
+    <label>author</label>
+    <input type="text" value="<?= $old_author?>"   name="author">
    
     <input type="submit" value="save" name="btnSave"/>
     </form>
