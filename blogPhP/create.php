@@ -2,6 +2,10 @@
 
 
 require('./services/helper.php');
+if(!auth()){
+   redirect('login.php');
+   }
+
 $message="";
 
 if(isset($_POST['btnSave'])&& $_POST['btnSave']=="save")
@@ -26,8 +30,8 @@ class MyDB extends SQLite3 {
  }
 
  $sql =<<<EOF
-    INSERT INTO blog (id,title  , content , author)
-    VALUES ($id, $title, $content, $author); 
+    INSERT INTO blog (id , title  , content , author)
+    VALUES ($id , $title , $content , $author); 
 EOF;
 
  $ret = $db->exec($sql);
@@ -59,7 +63,8 @@ EOF;
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
 <input type="text" placeholder="id"  name="id">
     <input type="text" placeholder="title"  name="title">
-    <input type="text" placeholder="content"  name="content">
+    <textarea  name="content" rows="4" cols="50" placeholder="content" ></textarea>
+  
     <input type="text" placeholder="author"  name="author">
    
     <input type="submit" value="save" name="btnSave"/>

@@ -1,5 +1,5 @@
 <?php
-
+require('./services/helper.php');
 $posts=[];
 $data;
 
@@ -22,10 +22,7 @@ EOF;
 
  $retRead = $dbRead->query($sqlRead);
  while($rowRead = $retRead->fetchArray() ) {
-//     echo "<div>ID = ". $rowRead['id'] . "\n</div>";
-//     echo "title = ". $rowRead['title'] ."\n";
-//     echo "content = ". $rowRead['content'] ."\n";
-//     echo "author = ".$rowRead['author'] ."\n\n";
+
 array_push($posts, (object)[
     'id' => $rowRead['id'],
     'title' => $rowRead['title'],

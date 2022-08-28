@@ -18,8 +18,7 @@ function login($email,$password){
     
 }
 
-function redirect($url)
-{
+function redirect($url){
     if (!headers_sent()){
         header("Location: $url");
     }else{
@@ -28,6 +27,8 @@ function redirect($url)
     }
     exit;
 }
+
+
  function auth(){
     if(isset($_SESSION['user'])){
         return true;
@@ -40,5 +41,6 @@ function redirect($url)
     unset($_SESSION['user']);
     redirect('login.php');
  }
+
 
 ?>
