@@ -3,30 +3,6 @@
 $posts=[];
 $data;
 
-
-
-
-
-// $posts= [
-// 	[
-// 		'Name' => 'Derek Emmanuel',
-// 		'Reg_No' => 'FE/30304',
-// 		'Email' => 'derekemmanuel@gmail.com'
-// 	],
-// 	[
-// 		'Name' => 'Rubecca Michealson',
-// 		'Reg_No' => 'FE/20003',
-// 		'Email' => 'rmichealsongmail.com'
-// 	],
-// 	[
-// 		'Name' => 'Frank Castle',
-// 		'Reg_No' => 'FE/10002',
-// 		'Email' => 'fcastle86@gmail.com'
-// 	]
-// ];
-
-
-
 class MyDBRead extends SQLite3 {
     function __construct() {
        $this->open('test.db');
