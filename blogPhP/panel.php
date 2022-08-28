@@ -86,7 +86,7 @@ array_push($posts, (object)[
         <tr >
         <th ><?=$value->id?></th>
                    <th ><?=$value->title?></th>
-                   <th ><?= get_summary($value->content,40)?></th>
+                   <th ><?=$value->content?></th>
                    <th ><?=$value->author?></th>
                    <th ><a href="edit.php?id=<?= $value->id?>&title=<?= $value->title?>&content=<?= $value->content?>&author=<?= $value->author?>">edit</a></th>
                    <th><a href="delete.php?id=<?= $value->id?>">delete</a></th>

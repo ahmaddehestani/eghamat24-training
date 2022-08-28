@@ -1,9 +1,14 @@
 .main{
     background-color: aqua;
+    width: 1000px;
+}
+.blog{
+    display: flex;
+   
 }
 .post{
     border: solid 1px;
-    width: 90%;
+    width: 900px;
   
     margin: 5%;
     background-color: blueviolet;
@@ -46,5 +51,10 @@ form>input{
 textarea{
     margin-bottom: 10px;
 
+}
+.side{
+    width: 250px;
+    background-color: red;
+    height: 1800px;
 }
 

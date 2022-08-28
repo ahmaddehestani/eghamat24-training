@@ -37,6 +37,11 @@ array_push($posts, (object)[
  echo "Operation done successfully\n";
  $dbRead->close();
 
+ $title=$_GET['title'];
+$new_id=$_GET['id'];
+ $author=$_GET['author'];
+ $content=$_GET['content'];
+
 
 
 ?>
@@ -48,12 +53,13 @@ array_push($posts, (object)[
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="view]port" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css">
-    <title>BLOG</title>
+    <title><?=$title?></title>
 </head>
 <body>
 
 <nav>
 <a href="login.php">login</a>
+<a href="index.php">home</a>
 
 </nav>
 <div class="blog">
@@ -78,16 +84,11 @@ array_push($posts, (object)[
        
         <div>
        
-<?php foreach($posts as $key=>$value):   ?>
-
-    
         <div class="post">
-            <h1><?=$value->title?></h1>
-            <h3><?= get_summary($value->content,190)?><a href="showPost.php?id=<?= $value->id?>&title=<?= $value->title?>&content=<?= $value->content?>&author=<?= $value->author?>">more</a></h3>
-            <h2><?=$value->author?></h2>
+            <h1><?=$title?></h1>
+            <h3><?= $content?></h3>
+            <h2><?=$author?></h2>
         </div>
- 
-    <?php endforeach ?>
     
     </div>
 

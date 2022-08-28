@@ -18,6 +18,7 @@ if(isset($_POST['btnSave'])&& $_POST['btnSave']=="save")
 $new_id=$_POST['id'];
  $author=$_POST['author'];
  $content=$_POST['content'];
+
 }
 
 
@@ -71,7 +72,7 @@ EOF;
     <label>title</label>
     <input type="text" value="<?= $old_title?>"  name="title">
     <label>content</label>
-    <textarea  name="content" rows="4" cols="50"  ><?= $old_content?></textarea>
+    <textarea  name="content" rows="8" cols="50"  ><?= $old_content?></textarea>
     <label>author</label>
     <input type="text" value="<?= $old_author?>"   name="author">
    
