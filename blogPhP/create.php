@@ -2,7 +2,7 @@
 
 
 require('./services/helper.php');
-
+$message="";
 
 if(isset($_POST['btnSave'])&& $_POST['btnSave']=="save")
 {
@@ -20,9 +20,9 @@ class MyDB extends SQLite3 {
  
  $db = new MyDB();
  if(!$db){
-    echo $db->lastErrorMsg();
+    $message=  $db->lastErrorMsg();
  } else {
-    echo "Opened database successfully\n";
+    $message= "Opened database successfully\n";
  }
 
  $sql =<<<EOF
@@ -32,9 +32,9 @@ EOF;
 
  $ret = $db->exec($sql);
  if(!$ret) {
-    echo $db->lastErrorMsg();
+    $message=  $db->lastErrorMsg();
  } else {
-    echo "Records created successfully\n";
+    $message=  "Records created successfully\n";
  }
  $db->close();
 
@@ -64,6 +64,10 @@ EOF;
    
     <input type="submit" value="save" name="btnSave"/>
     </form>
+
+    <div>
+        <h3><?= $message?></h3>
+    </div>
   
 </body>
 </html>
