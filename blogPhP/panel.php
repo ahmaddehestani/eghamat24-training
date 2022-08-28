@@ -3,12 +3,15 @@ require('./services/helper.php');
 if(!auth()){
 redirect('login.php');
 }
-
-
-
-
 $posts=[];
 $message;
+
+
+
+
+
+
+
 
 class MyDBRead extends SQLite3 {
     function __construct() {
@@ -69,6 +72,7 @@ array_push($posts, (object)[
 
     <table class="panelTable">
         <tr>
+        <th>id</th>
             <th>title</th>
             <th>content</th>
             <th>author</th>
@@ -80,11 +84,12 @@ array_push($posts, (object)[
        
           
         <tr >
+        <th ><?=$value->id?></th>
                    <th ><?=$value->title?></th>
                    <th ><?= get_summary($value->content,40)?></th>
                    <th ><?=$value->author?></th>
-                   <th ><a href="#">edit</a></th>
-                   <th><a href="#">delete</a></th>
+                   <th ><a href="edit.php?id=<?= $value->id?>">edit</a></th>
+                   <th><a href="delete.php?id=<?= $value->id?>">delete</a></th>
              
        </tr>
            <?php endforeach ?>

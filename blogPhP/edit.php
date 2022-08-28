@@ -1,24 +1,26 @@
 <?php
-
-
 require('./services/helper.php');
 if(!auth()){
-   redirect('login.php');
-   }
-
-$message="";
-
+    redirect('login.php');
+    }
+// if(!isset($_GET['id'])){
+//     redirect('panel.php');
+// }
+$id=$_GET['id'];
+// $title="999";
+// $content="888";
+// $author="666";
 if(isset($_POST['btnSave'])&& $_POST['btnSave']=="save")
 {
  $title=$_POST['title'];
- $id=$_POST['id'];
+$new_id=$_POST['id'];
  $author=$_POST['author'];
  $content=$_POST['content'];
 }
-
-
-
-
+echo $id;
+echo $title;
+echo  $author;
+echo  $content;
 
 
 class MyDB extends SQLite3 {
@@ -28,34 +30,30 @@ class MyDB extends SQLite3 {
  }
  
  $db = new MyDB();
- if(!$db){
-    $message=  $db->lastErrorMsg();
+ if(!$db) {
+    echo $db->lastErrorMsg();
  } else {
-    $message= "Opened database successfully\n";
+    echo "Opened database successfully\n";
  }
-
  $sql =<<<EOF
-    INSERT INTO blog (id , title  , content , author)
-    VALUES ($id , $title , $content , $author); 
+    UPDATE blog SET title = $title , content = $content , author = $author where id=$new_id;
 EOF;
-
  $ret = $db->exec($sql);
  if(!$ret) {
-    $message=  $db->lastErrorMsg();
+    echo $db->lastErrorMsg();
  } else {
-    $message=  "Records created successfully\n";
+    echo $db->changes(), " Record updated successfully\n";
  }
  $db->close();
 
 
-
-
-
+ echo "idi is:  ".$id." \n ";
+ echo "  new id  is:  ".$new_id."  \n";
+// echo $title;
+// echo  $author;
+// echo  $content;
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +61,7 @@ EOF;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css">
-    <title>CREATE POST</title>
+    <title>EDIT PAGE</title>
 </head>
 <body>
 <nav>
@@ -71,9 +69,9 @@ EOF;
     <a href="create.php">create Post</a>
     <a href="panel.php">panel admin</a>
     </nav>
-
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
-<input type="text" placeholder="id"  name="id">
+   
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
+    <input type="text" value="<?= $id?>"  name="id">
     <input type="text" placeholder="title"  name="title">
     <textarea  name="content" rows="4" cols="50" placeholder="content" ></textarea>
   
@@ -82,9 +80,5 @@ EOF;
     <input type="submit" value="save" name="btnSave"/>
     </form>
 
-    <div>
-        <h3><?= $message?></h3>
-    </div>
-  
 </body>
 </html>
