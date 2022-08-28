@@ -25,4 +25,6 @@ EOF;
    }
    echo "Operation done successfully\n";
    $db->close();
+
+ 
 ?>

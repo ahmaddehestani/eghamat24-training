@@ -1,0 +1,13 @@
+.main{
+    background-color: aqua;
+}
+.post{
+    border: solid 1px;
+    width: 90%;
+    height: 20%;
+    margin: 5%;
+    background-color: blueviolet;
+}
+.post>h2{
+    margin-left: 90%;
+}
