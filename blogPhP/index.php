@@ -1,5 +1,6 @@
 <?php
 require('./services/helper.php');
+
 $posts=[];
 $data;
 
@@ -51,7 +52,9 @@ array_push($posts, (object)[
 </head>
 <body>
 
-
+<nav>
+<a href="login.php">login</a>
+</nav>
     <main class="main">
        
 <?php foreach($posts as $key=>$value):   ?>

@@ -11,3 +11,40 @@
 .post>h2{
     margin-left: 90%;
 }
+.panelTable th{
+    background-color: #eee;
+    border: solid 1px;
+    height: 2px;
+    width: 70px;
+     
+}
+nav{
+    background-color: black;
+    color: beige;
+    height:  80px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+
+}
+nav>a{
+    color: #eee;
+    padding-top: 30px;
+}
+form{
+    margin-top: 10%;
+    display: grid;
+    text-align: center;
+    justify-content: space-around;
+    justify-items:normal;
+}
+form>input{
+    margin-top: 10px;
+    height: 25px;
+
+}
+textarea{
+    margin-top: 10px;
+
+}
+

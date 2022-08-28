@@ -57,9 +57,16 @@ EOF;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
     <title>CREATE POST</title>
 </head>
 <body>
+<nav>
+    <a href="logout.php">log out</a>
+    <a href="create.php">create Post</a>
+    <a href="panel.php">panel admin</a>
+    </nav>
+
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
 <input type="text" placeholder="id"  name="id">
     <input type="text" placeholder="title"  name="title">
