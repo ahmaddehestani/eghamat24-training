@@ -36,7 +36,7 @@ class MyDB extends SQLite3 {
     echo "Opened database successfully\n";
  }
  $sql =<<<EOF
-    UPDATE blog SET title = $title , content = $content , author = $author where id=$new_id;
+    UPDATE blog SET title = '$title' , content = '$content' , author = '$author' where id=$new_id;
 EOF;
  $ret = $db->exec($sql);
  if(!$ret) {

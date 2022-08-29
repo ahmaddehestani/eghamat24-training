@@ -36,7 +36,7 @@ class MyDB extends SQLite3 {
 
  $sql =<<<EOF
     INSERT INTO blog (id , title  , content , author)
-    VALUES ($id , $title , $content , $author); 
+    VALUES ($id , '$title' , '$content' , '$author'); 
 EOF;
 
  $ret = $db->exec($sql);
