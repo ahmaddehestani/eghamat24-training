@@ -1,5 +1,5 @@
 .main{
-    background-color: aqua;
+   
     width: 1000px;
 }
 .blog{
@@ -9,9 +9,12 @@
 .post{
     border: solid 1px;
     width: 900px;
-  
+  border-radius: 8px;
     margin: 5%;
-    background-color: blueviolet;
+    background-color: rgb(224, 221, 226);
+    padding: 8px 5px;
+    box-shadow:3px 4px;
+    
 }
 .post>h2{
     margin-left: 90%;
@@ -54,7 +57,12 @@ textarea{
 }
 .side{
     width: 250px;
-    background-color: red;
+    background-color: rgb(153, 149, 149);
     height: 1800px;
+    padding-left: 15px;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}

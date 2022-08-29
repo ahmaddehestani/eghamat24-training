@@ -10,7 +10,7 @@ $message="";
 
 if(isset($_POST['btnSave'])&& $_POST['btnSave']=="save")
 {
- $title=$_POST['title'];
+ $title = $_POST['title'];
  $id=$_POST['id'];
  $author=$_POST['author'];
  $content=$_POST['content'];

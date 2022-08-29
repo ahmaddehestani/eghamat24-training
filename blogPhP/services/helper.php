@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-function get_summary($str,$length=120){
-    return substr($str,0,$length).'...';
+function get_summary($str,$length = 120){
+    return substr($str, 0, $length) . '...';
 
 }
 
@@ -33,10 +33,10 @@ function redirect($url){
     if(isset($_SESSION['user'])){
         return true;
     }
-    else{
-        return false;
-    }
+    return false;
+    
  }
+
  function logout(){
     unset($_SESSION['user']);
     redirect('login.php');
