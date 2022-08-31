@@ -55,5 +55,27 @@ $metas_description = $crawler->filter('meta')->each(function (Crawler $node, $i)
 }
 });
 
+foreach($metas_description as $item){
+    if($item!=null)
+    $metas_description=$item;
+}
+
+$titles = $crawler->filter('title')->each(function (Crawler $node, $i) {;
+    $temporary = $node->text();
+    $title = $temporary;
+    return $title;
+});
+
+$canonical = $crawler->filter('link')->each(function (Crawler $node, $i) {
+    $temporary = $node->attr('rel');
+    if(strtolower($temporary)=="canonical"){
+        $temporary =$node->attr('href');
+    return $temporary;
+    }
+});
+foreach($canonical as $item){
+    if($item!=null)
+    $canonical=$item;
+}
 
 
