@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <form method="post" action="index.php">
+    <form method="post" action="crawler.php">
         <img src="./SEO.png" alt="Girl in a jacket">
         <label>please insert url like example ( http://eghamat24.com/ )</label>
         <input type="text" name="url" class="title" value="url" />

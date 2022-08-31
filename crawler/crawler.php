@@ -11,12 +11,12 @@ use GuzzleHttp\Client;
 
 
 
-$url = "http://eghamat24.com/";
+$url = $_POST['url'];;
 $links = array();
 $images = array();
 $videos = array();
 $metas = array();
-
+ 
 
 $response = file_get_contents($url);
 
