@@ -29,6 +29,12 @@ $links = $crawler->filter('a')->each(function (Crawler $node, $i) {
 
 $unique_links = array_unique($links);
 
+$images = $crawler->filter('img')->each(function (Crawler $node, $i) {
+    $temporary = $node;
+    $image = $temporary;
+    return $image;
+});
+
 
 
 
