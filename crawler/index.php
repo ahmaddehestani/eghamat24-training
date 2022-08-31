@@ -35,6 +35,12 @@ $images = $crawler->filter('img')->each(function (Crawler $node, $i) {
     return $image;
 });
 
+$videos = $crawler->filter('video')->each(function (Crawler $node, $i) {
+    $temporary = $node;
+    $video = $temporary;
+    return $video;
+});
+
 
 
 
