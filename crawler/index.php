@@ -27,4 +27,8 @@ $links = $crawler->filter('a')->each(function (Crawler $node, $i) {
     return $link;
 });
 
+$unique_links = array_unique($links);
+
+
+
 
