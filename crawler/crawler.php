@@ -109,6 +109,10 @@ foreach ($canonical as $item) {
     <h3><?= $metas_description ?> </h3>
     <label class="label">titles is:</label>
     <h3><?= $titles[0] ?> </h3>
+    <label class="label">all page links:</label>
+    <?php foreach($unique_links as $link):   ?>
+          <h4><?=$link?></h4>
+          <?php endforeach ?>
 </body>
 
 </html>
