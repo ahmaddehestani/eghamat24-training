@@ -78,6 +78,20 @@ foreach ($canonical as $item) {
         $canonical = $item;
 }
 
+
+foreach($unique_links as $item){
+    if(substr($item,0,1)=="/"&& substr($item,0,2)!="//"){
+        $item=parse_url($url)["scheme"]."://".parse_url($url)["host"].$item;
+    }else if( substr($item,0,2)=="//"){
+        $item=parse_url($url)["scheme"].":".$item;
+    }else if( substr($item,0,2)=="./"){
+        $item=parse_url($url)["scheme"].":".parse_url($url)["host"].dirname(parse_url($url)["path"]).substr($item,1);
+    }else if(substr($item,0,1)=="#"){
+        $item=parse_url($url)["scheme"].":".parse_url($url)["host"].parse_url($url)["path"].$item;
+    }
+$correct_link=$item;
+}
+
 ?>
 
 <!DOCTYPE html>
