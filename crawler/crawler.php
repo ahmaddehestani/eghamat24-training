@@ -11,7 +11,7 @@ use GuzzleHttp\Client;
 
 
 
-$url = $_POST['url'];;
+$url = $_POST['url'];
 $links = array();
 $images = array();
 $videos = array();
