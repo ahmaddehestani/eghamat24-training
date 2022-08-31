@@ -41,6 +41,11 @@ $videos = $crawler->filter('video')->each(function (Crawler $node, $i) {
     return $video;
 });
 
+$metas = $crawler->filter('meta')->each(function (Crawler $node, $i) {
+    $temporary = $node->attr('name');
+    $meta = $temporary;
+    return $meta;
+});
 
 
 
