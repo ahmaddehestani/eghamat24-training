@@ -47,5 +47,13 @@ $metas = $crawler->filter('meta')->each(function (Crawler $node, $i) {
     return $meta;
 });
 
+$metas_description = $crawler->filter('meta')->each(function (Crawler $node, $i) {
+    $temporary = $node->attr('name');
+    if(strtolower($temporary)=="description"){
+        $meta_description =$node->attr('content');
+        return  $meta_description;
+}
+});
+
 
 
