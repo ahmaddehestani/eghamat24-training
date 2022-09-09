@@ -89,7 +89,7 @@ foreach($unique_links as $item){
     }else if(substr($item,0,1)=="#"){
         $item=parse_url($url)["scheme"].":".parse_url($url)["host"].parse_url($url)["path"].$item;
     }
-$correct_link=$item;
+$correct_link[]=$item;
 }
 
 ?>
